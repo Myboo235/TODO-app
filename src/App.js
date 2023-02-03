@@ -27,6 +27,11 @@ function App() {
       (todo.id === id) ? {...todo,isCompleted : !todo.isCompleted} : todo
     ))
   }
+  const removeWork = (id)=>{
+    setToDoWork((todo) => 
+      todo.filter((todo) => todo.id !== id)
+    )
+  }
 
   const clearInput = () => {
     setInput("");
@@ -55,7 +60,7 @@ function App() {
 
       <div>
         <h4 className="mt-4">Work </h4>
-        <ToDoList ToDoWork={ToDoWork} finishedWork={finishedWork} />
+        <ToDoList ToDoWork={ToDoWork} finishedWork={finishedWork} removeWork = {removeWork}/>
       </div>
       <div className="fixed-bottom m-4">
         <h4 >Link </h4>

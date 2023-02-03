@@ -4,11 +4,9 @@ import Button from "react-bootstrap/Button";
 import Form from 'react-bootstrap/Form';
 import CloseButton from 'react-bootstrap/CloseButton'
 
-export default function Todo({ todo , finishedWork }) {
+export default function Todo({ todo , finishedWork , removeWork }) {
 
-  const remove = (id)=>{
-     document.getElementById(id).remove();
-  }
+
   return (
 
     
@@ -25,7 +23,7 @@ export default function Todo({ todo , finishedWork }) {
           finishedWork(todo.id)}}
       />
       </Button>
-      <CloseButton className="mx-1 mt-3 col-1" aria-label="Hide" onClick={() =>{remove(todo.id)}}/>
+      <CloseButton className="mx-1 mt-3 col-1" aria-label="Hide" onClick={() =>{removeWork(todo.id)}}/>
 
       </div>
       
